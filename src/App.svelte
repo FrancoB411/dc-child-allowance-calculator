@@ -1,57 +1,45 @@
+
 <script>
-	const message = 'Learn Svelte';
+	import { calculate as calc }  from './DCChildAllowanceCalculator.js';
+	
+	
+	const childrenFormatter = new Intl.NumberFormat('en-US', { notation: 'standard'})
+	const moneyFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
+	
+	let perCheck = moneyFormatter.format(0);
+	let income = 350000;
+	let children = '0';
+	let status = 'head';
+	let timeFrame = 'biweekly';
+	
+	function update({target: { value }} = params) {
+		//console.log(value)
+		let result = calc({status, income: value, children, timeFrame})
+		perCheck = moneyFormatter.format(result);
+		children = childrenFormatter.format(children);
+	}
 </script>
 
 <style>
-	:global(body) {
-		margin: 0;
-		font-family: Arial, Helvetica, sans-serif;
-	}
-	.App {
-		text-align: center;
-	}
-	.App-header {
-		background-color: #F9F6F6;
-		color: #333;
-		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		font-size: calc(10px + 2vmin);
-	}
-	.App-link {
-		color: #ff3e00;
-	}
-	.App-logo {
-		height: 40vmin;
-		pointer-events: none;
-		margin-bottom: 1.0rem;
-		animation: App-logo-spin infinite 1.6s ease-in-out alternate;
-	}
-	@keyframes App-logo-spin {
-		from {
-			transform: scale(1);
-		}
-		to {
-			transform: scale(1.06);
-		}
-	}
+
 </style>
 
-<div class="App">
-	<header class="App-header">
-		<img src="/logo.svg" class="App-logo" alt="logo" />
-		<p>
-			Edit <code>src/App.svelte</code> and save to reload.
-		</p>
-		<a
-			class="App-link"
-			href="https://svelte.dev"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			{message}
-		</a>
-	</header>
-</div>
+<h1>
+	If you file taxes <br>
+	<select name="filingStatus" id="cars">
+  	<option value="individual">as an individual</option>
+  	<option value="head">as head of household</option>
+  	<option value="jointly">jointly</option>
+ </select>
+	with <input type=number value=0> 	<br> 
+	dependents,
+	and a household income of <br> {moneyFormatter.format(income)},
+</h1>
+<label>
+	<input type=range  bind:value={income}  min=0 max=1000000 on:input={update}>
+</label>
+<h1>
+	you would pay {perCheck} <br> 
+	per paycheck to cut child poverty in DC in half, <br>
+	lifting nearly {childrenFormatter.format(17000)} American children out of poverty. 
+</h1>
