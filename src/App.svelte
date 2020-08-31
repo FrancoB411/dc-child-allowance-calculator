@@ -6,7 +6,7 @@
 	const childrenFormatter = new Intl.NumberFormat('en-US', { notation: 'standard'})
 	const moneyFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
 	
-	let perCheck = moneyFormatter.format(0);
+	let inMoney = moneyFormatter.format(0);
 	let income = 350000;
 	let children = '0';
 	let status = 'head';
@@ -15,7 +15,7 @@
 	function update({target: { value }} = params) {
 		//console.log(value)
 		let result = calc({status, income: value, children, timeFrame})
-		perCheck = moneyFormatter.format(result);
+		inMoney = moneyFormatter.format(result);
 		children = childrenFormatter.format(children);
 	}
 </script>
@@ -39,7 +39,7 @@
 	<input type=range  bind:value={income}  min=0 max=1000000 on:input={update}>
 </label>
 <h1>
-	you would pay {perCheck} <br> 
+	you would pay {inMoney} <br> 
 	per paycheck to cut child poverty in DC in half, <br>
 	lifting nearly {childrenFormatter.format(17000)} American children out of poverty. 
 </h1>
