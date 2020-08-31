@@ -1,6 +1,6 @@
-# New Project
+# Washington DC Child Allowance UBI Calculator
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+Calculates what it would cost each individual, based on their income, to eliminate child poverty in Washington DC.
 
 ## Available Scripts
 
@@ -23,7 +23,3 @@ Builds a static copy of your site to the `build/` folder.
 Your app is ready to be deployed!
 
 **For the best production performance:** Add a build bundler plugin like "@snowpack/plugin-webpack" or "@snowpack/plugin-parcel" to your `snowpack.config.json` config file.
-
-### Q: What about Eject?
-
-No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same.
