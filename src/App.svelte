@@ -9,13 +9,13 @@
 	let inMoney = moneyFormatter.format(0);
 	let income = 350000;
 	let children = '0';
-	let status = 'head';
-	let timeFrame = 'biweekly';
+	let status = 'individual';
+	let timeFrame = 'yearly';
 	
 	function update({target: { value }} = params) {
 		//console.log(value)
 		let result = calc({status, income: value, children, timeFrame})
-		inMoney = moneyFormatter.format(result);
+		inMoney = moneyFormatter.format(result * -1);
 		children = childrenFormatter.format(children);
 	}
 </script>
@@ -40,6 +40,6 @@
 </label>
 <h1>
 	you would pay {inMoney} <br> 
-	per paycheck to cut child poverty in DC in half, <br>
+	per year to cut child poverty in DC in half, <br>
 	lifting nearly {childrenFormatter.format(17000)} American children out of poverty. 
 </h1>

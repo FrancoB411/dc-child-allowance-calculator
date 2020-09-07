@@ -9,52 +9,87 @@ import {
 // calculate
 const specs = [
     {
+        status: 'individual',
+        children: 0,
+        income: 500_000,
+        timeFrame: "yearly",
+        expected: -6_621.32 
+    },
+    {
+        status: 'head',
+        children: 3,
+        income: 35_000,
+        timeFrame: "yearly",
+        expected: 10_668.17 
+    },
+    {
+        status: 'joint',
+        children: 5,
+        income: 60_000,
+        timeFrame: "yearly",
+        expected: 17_680.56
+    },
+    {
+        status: 'head',
+        children: 5,
+        income: 8_000,
+        timeFrame: "yearly",
+        expected: 18_068.31 
+    },
+    {
+        status: 'individual',
+        children: 0,
+        income: 60_000,
+        timeFrame: "yearly",
+        expected: -446.46
+    },
+    {
         status: 'head',
         children: 5,
         income: 20_000,
         timeFrame: "biweekly",
-        expected: -691.89 
+        expected: 691.89 
     }, {
         status: 'joint',
         children: 8,
         income: 200_000,
         timeFrame: 'biweekly',
-        expected: -1023.25
+        expected: 1023.25
     },
     {
         status: 'joint',
         children: 1,
         income: 1_000_000,
         timeFrame: 'biweekly',
-        expected: 386.37
+        expected: -386.37
     },
     {
         status: 'joint',
         children: 1,
         income: 1_000_000,
         timeFrame: 'monthly',
-        expected: 837.14 
+        expected: -837.14 
     },
     {
         status: 'joint',
         children: 1,
         income: 1_000_000,
         timeFrame: 'yearly',
-        expected: 10045.64
+        expected: -10045.64
     },
     {
         status: 'individual',
         children: 0,
         income: 50_000,
         timeFrame: 'biweekly',
-        expected: 13.1238
+        expected: -13.1238
     },
     {
         status: 'individual',
         children: 0,
         income: 50_000,
         timeFrame: 'daily',
-        expected: 0.935
+        expected: -0.935
     }
 ];
 

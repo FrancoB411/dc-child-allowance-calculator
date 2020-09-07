@@ -28,5 +28,5 @@ export function calculateNetChange(childAllowance, tax) {
 }
 
 function calculateTimeFrame(netChange, timeFrame) {
-  return (netChange) / timeFrame * -1;
+  return (netChange) / timeFrame;
 }

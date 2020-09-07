@@ -49,6 +49,10 @@ test("income 350_000", () => {
     expect(calculateTaxRate(350_000)).toBeCloseTo(4637);
 })
 
+test("income 500_00", () => {
+    expect(calculateTaxRate(500_000)).toBeCloseTo(6797);
+})
+
 test("income 999_999", () => {
     expect(calculateTaxRate(999_999)).toBeCloseTo(13996.9856);
 })
