@@ -10,7 +10,6 @@ const TIME_FRAMES = {
 }
 
 export function calculate({status, income, children, timeFrame} = params) {
-
   const adjustedIncome = adjustIncome(income, status);
   const tax = calculateTaxRate(adjustedIncome);
   const childAllowance = calculateChildAllowance(children);
