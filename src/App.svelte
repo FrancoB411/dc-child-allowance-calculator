@@ -53,7 +53,7 @@
 <h1>
 	You would
 	{#if result > 0}
-		receive {asMoney} to assist with childcare.
+		receive {asMoney} per year to assist with childcare.
 	{:else}
 		pay {asMoney} <br> 
 		per year to cut child poverty in DC in half, <br>
