@@ -5,8 +5,7 @@
 
 	const MEDIAN_DC_HOUSEHOLD_INCOME = 85203;	
 	const childrenFormatter = new Intl.NumberFormat('en-US', { notation: 'standard'})
-	const moneyFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
-;	
+	const moneyFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });	
 	let income;
 	let selected;
 	let result;
